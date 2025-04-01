@@ -35,11 +35,22 @@ android {
         versionName "2.8.2"
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
-    compile 'com.github.barteksc:pdfium-android:1.7.1'
+//    compile 'com.github.barteksc:pdfium-android:1.7.1' // replace by PdfiumAndroid-release.aar
+    compile(name: 'PdfiumAndroid-release', ext: 'aar')
+    compile 'com.android.support:support-v4:26.1.0'
 }
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

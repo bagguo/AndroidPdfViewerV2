@@ -1,0 +1,2 @@
+## build AAR
+./gradlew build
